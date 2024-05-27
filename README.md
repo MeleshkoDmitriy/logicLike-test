@@ -1,30 +1,31 @@
-# React + TypeScript + Vite
+# Приложение для фильтрации курсов
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Это React-приложение, которое позволяет пользователям фильтровать список образовательных курсов на основе связанных с ними тегов (тем). Приложение получает данные о курсах из конечной точки API и динамически отображает курсы с возможностью фильтрации по тегам.
 
-Currently, two official plugins are available:
+## Используемые технологии
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<ol>
+  <li><b>React</b>: Библиотека JavaScript для построения пользовательских интерфейсов.</li>
+  <li><b>TypeScript</b>: Надмножество JavaScript, добавляющее статическую типизацию к языку.</li>
+  <li><b>Redux Toolkit</b>: Инструментарий для эффективной разработки с использованием Redux, включая функции createAsyncThunk и createApi.</li>
+  <li><b>RTK Query</b>: Инструмент для получения и кэширования данных, являющийся частью Redux Toolkit, используется для второй реализации.</li>
+  <li><b>SCSS</b>: Препроцессор CSS, добавляющий возможности, такие как переменные, вложенность и миксины.</li>
+</ol>
 
-## Expanding the ESLint configuration
+## Возможности
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Отображает список образовательных курсов, полученных из конечной точки API.
+- Позволяет пользователям фильтровать курсы, выбирая теги (темы) из бокового меню.
+- Обеспечивает оптимизацию производительности приложения, используя такие функции, как мемоизация, для предотвращения ненужных перерендеров.
+- Поддерживает адаптивный дизайн, при котором список курсов подстраивается под различные размеры экрана.
 
-- Configure the top-level `parserOptions` property like this:
+## Реализации
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+Это приложение имеет две реализации: одну с использованием createAsyncThunk из Redux Toolkit и другую с использованием createApi из RTK Query.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Оптимизации
+
+Приложение включает в себя следующие оптимизации:
+
+- Мемоизация: Функции useAppSelector и handlePickCategory мемоизированы с помощью useCallback для предотвращения ненужных перерендеров.
+- React.memo: Компонент Card обернут в React.memo для предотвращения повторного рендеринга, когда его входные данные не изменились.
