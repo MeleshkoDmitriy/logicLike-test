@@ -1,0 +1,25 @@
+$colorGreen: #5FBF77;
+$colorGray: #CFCFE4;
+$colorWhite: #FFF;
+$colorBlack: #39414B;
+$shadow: rgba(35, 35, 95, 0.19);
+
+$radiusLarge: 18px;
+$radiusSmall: 12px;
+
+$transition: 0.2s;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Nunito, sans-serif; 
+  font-size: 18px; 
+  font-weight: 800; 
+  line-height: 18px; 
+  color: $colorBlack;
+}
+
+ul {
+  list-style: none;
+}

@@ -1,0 +1,45 @@
+@import '../../globalStyles.module.scss';
+
+.wrapper {
+  min-width: 264px;
+  padding: 12px;
+  border-radius: $radiusLarge;
+  border: 1px solid $colorGray;
+}
+
+.list {
+
+}
+
+li {
+  padding: 12px;
+  font-weight: 800;
+  color: $colorBlack;
+  border-radius: $radiusSmall;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: $transition;
+
+  &:hover {
+    border: 1px solid $colorGreen;
+  }
+}
+
+.active {
+  background-color: $colorGreen;
+  color: $colorWhite;
+}
+
+@media (max-width: 800px) {
+  .wrapper {
+    position: sticky;
+    top: 24px;
+  }
+}
+
+@media (max-width: 475px) {
+  .wrapper {
+    position: relative;
+    top: 0;
+  }
+}
